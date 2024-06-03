@@ -1,0 +1,106 @@
+﻿@page "/edittags"
+
+<PageTitle>PLC Tag Monitor</PageTitle>
+
+@using CommonTools.Classes;
+@using WebHMI.Data
+@inject TagDataService tagService
+
+<!-- Form for adding a new tag -->
+<h3>Add New Tag</h3>
+<EditForm Model="newTag" OnValidSubmit="AddTag">
+    <InputText @bind-Value="newTag.plc" placeholder="PLC Name" />
+    <InputText @bind-Value="newTag.ipAddress" placeholder="IpAddress" />
+    <InputText @bind-Value="newTag.name" placeholder="Tag Name" />
+    <InputText @bind-Value="newTag.type" placeholder="Data Type" />
+    <button type="submit" class="btn btn-primary">Add</button>
+</EditForm>
+
+<br />
+
+@if (tags.Count < 1)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <h1>PLC Tags Monitored: @tags.Count</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>PLC</th>
+                <th>IP Address</th>
+                <th>Name</th>
+                <th>Data Type</th>
+                <th>Latest Value</th>
+                <th>Last Update</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Tag tag in tags)
+            {
+                <tr>
+                    <td>@tag.plc</td>
+                    <td>@tag.ipAddress</td>
+                    <td>@tag.name</td>
+                    <td>@tag.type</td>
+                    <td>@tag.data</td>
+                    <td>@tag.lastUpdate</td>
+                    <td>
+                        <button @onclick="() => EditTag(tag)" class="btn btn-secondary">Edit</button>
+                        <button @onclick="() => RemoveTag(tag)" class="btn btn-danger">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private System.Timers.Timer? timer;
+    private Tag newTag = new Tag(); // For adding a new tag
+    //private PLCConfig newTag = new PLCConfig();
+    private List<Tag> tags = new List<Tag>();
+
+    protected override void OnInitialized()
+    {
+        tags = tagService.GetTagData();
+        timer = new System.Timers.Timer(1000);
+        timer.Elapsed += async (sender, args) => await InvokeAsync(GetTagVals);
+        timer.Start();
+    }
+
+    private void GetTagVals()
+    {
+        tags = tagService.GetTagData();
+        StateHasChanged();
+    }
+
+    private void AddTag()
+    {
+        tagService.AddTag(newTag);
+        newTag = new Tag(); // Reset the form
+        GetTagVals();
+    }
+
+
+    private void EditTag(Tag tag)
+    {
+        // Navigate to an edit page or display a modal dialog
+        // For simplicity, I'm just updating the tag directly here
+        tagService.UpdateTag(tag);
+        GetTagVals();
+    }
+
+    private void RemoveTag(Tag tag)
+    {
+        tagService.RemoveTag(tag);
+        GetTagVals();
+    }
+
+    private void Dispose()
+    {
+        timer?.Dispose();
+    }
+}

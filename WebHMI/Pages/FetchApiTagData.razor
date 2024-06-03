@@ -1,0 +1,62 @@
+﻿@page "/fetch-apitag-data"
+@inject TagApiDataService TagDataService
+
+<h1>Tag Data</h1>
+
+@if (CurrentData == null || !CurrentData.Any())
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Tag Name</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var entry in CurrentData.OrderBy(e => e.Key))
+            {
+                <tr>
+                    <td>@entry.Key</td>
+                    <td>@entry.Value</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private Dictionary<string, object> CurrentData;
+    private Timer timer;
+
+    protected override void OnInitialized()
+    {
+        TagDataService.OnDataUpdated += UpdateState;
+        timer = new Timer(async _ => await FetchDataAndUpdateUI(), null, 0, 1000);
+    }
+
+    private async Task FetchDataAndUpdateUI()
+    {
+        await TagDataService.FetchDataAsync();
+        await InvokeAsync(() => StateHasChanged());
+    }
+
+    private void UpdateState()
+    {
+        CurrentData = TagDataService.CurrentData;
+        InvokeAsync(() => StateHasChanged());
+    }
+
+    public void Dispose()
+    {
+        // Cleanup
+        TagDataService.OnDataUpdated -= UpdateState;
+        timer?.Dispose();
+    }
+}
+
+
+

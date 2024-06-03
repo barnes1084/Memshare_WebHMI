@@ -1,0 +1,97 @@
+﻿@page "/taskmonitor"
+@using System.Windows.Input;
+@using System.ComponentModel;
+@using WebHMI.Data
+@inject RunTasks TaskRunner
+
+
+<h3>TaskMonitor</h3>
+
+<!-- Task Control Buttons -->
+<button @onclick="StartTasks" class="btn btn-primary">Start</button>
+<button @onclick="StopTasks" class="btn btn-danger">Stop</button>
+
+<br>
+<br>
+
+@if (TaskRunner.Tasks == null || !TaskRunner.Tasks.Any())
+{
+    <p>No tasks are running.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var viewModel in TaskRunner.Tasks)
+            {
+                <tr>
+                    <td>@viewModel.Name</td>
+                    <td>@viewModel.Status</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    protected override void OnInitialized()
+    {
+        TaskRunner.PropertyChanged += TaskRunner_PropertyChanged;
+    }
+
+    private void TaskRunner_PropertyChanged(object sender, PropertyChangedEventArgs e)
+    {
+        if (e.PropertyName == nameof(TaskRunner.Tasks))
+        {
+            StateHasChanged();
+        }
+    }
+
+    public void Dispose()
+    {
+        TaskRunner.PropertyChanged -= TaskRunner_PropertyChanged;
+    }
+
+
+
+    private void StartTasks()
+    {
+        // Execute the Start command from the RunTasks class
+        if (TaskRunner.StartCommand is ICommand startCommand && startCommand.CanExecute(null))
+        {
+            startCommand.Execute(null);
+        }
+
+        // Execute the Refresh command from the RunTasks class
+        if (TaskRunner.RefreshCommand is ICommand refreshCommand && refreshCommand.CanExecute(null))
+        {
+            refreshCommand.Execute(null);
+            StateHasChanged();
+        }
+    }
+
+    private void StopTasks()
+    {
+        // Execute the Stop command from the RunTasks class
+        if (TaskRunner.StopCommand is ICommand stopCommand && stopCommand.CanExecute(null))
+        {
+            stopCommand.Execute(null);
+
+        }
+
+        // Execute the Refresh command from the RunTasks class
+        if (TaskRunner.RefreshCommand is ICommand refreshCommand && refreshCommand.CanExecute(null))
+        {
+            refreshCommand.Execute(null);
+            StateHasChanged();
+        }
+    }
+
+    
+}

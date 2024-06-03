@@ -1,0 +1,323 @@
+﻿
+.press {
+    position: absolute;
+    width: 53px;
+    height: 122px;
+    background-color: transparent;
+    border: none;
+}
+
+.press-alarmleft {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: red;
+    top: 26px;
+    left: 0px;
+}
+
+.press-alarmright {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: red;
+    top: 26px;
+    left: 26px;
+}
+
+.pan-alarmleft {
+    position: absolute;
+    width: 25px;
+    height: 15px;
+    background-color: red;
+    top: 18px;
+    left: 0px;
+}
+
+.pan-alarmright {
+    position: absolute;
+    width: 25px;
+    height: 15px;
+    background-color: red;
+    top: 18px;
+    left: 26px;
+}
+
+.deliverytime-left {
+    position: absolute;
+    width: 25px;
+    height: 14px;
+    font-size: 8px;
+    top: 0px;
+    left: 0px;
+}
+
+.deliverytime-right {
+    position: absolute;
+    width: 25px;
+    height: 14px;
+    font-size: 8pt;
+    text-align: right;
+    top: 0px;
+    left: 27px;
+}
+
+.hold-left {
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    font-size: 7pt;
+    background-color: lightyellow;
+    top: 2px;
+    left: 0px;
+}
+
+.hold-right {
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    font-size: 7pt;
+    text-align: right;
+    background-color: lightyellow;
+    top: 2px;
+    left: 30px;
+}
+
+.machine-left {
+    position: absolute;
+    width: 8px;
+    height: 50px;
+    border: 1px solid black;
+    background-color: grey;
+    top: 18px;
+    left: 0px;
+}
+
+.machine-right {
+    position: absolute;
+    width: 8px;
+    height: 50px;
+    border: 1px solid black;
+    background-color: grey;
+    top: 18px;
+    left: 43px;
+}
+
+
+.machine-topleft {
+    position: absolute;
+    width: 20px;
+    height: 8px;
+    border: 1px solid black;
+    background-color: lightgray;
+    top: 31px;
+    left: 0px;
+}
+
+.machine-topright {
+    position: absolute;
+    width: 20px;
+    height: 8px;
+    border: 1px solid black;
+    background-color: lightgray;
+    top: 31px;
+    left: 31px;
+}
+
+.machine-panleft {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-color: lightgray;
+    top: 14px;
+    left: 0px;
+}
+
+.machine-panright {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-color: lightgray;
+    top: 14px;
+    left: 39px;
+}
+
+.machine-loaderleft {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-color: lightgray;
+    top: 29px;
+    left: 12px;
+}
+
+.machine-loaderright {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-color: lightgray;
+    top: 29px;
+    left: 27px;
+}
+
+.machine-cavityleft {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-color: lightgray;
+    top: 43px;
+    left: 0px;
+}
+
+.machine-cavityright {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-color: lightgray;
+    top: 43px;
+    left: 26px;
+}
+
+.curingtime-left {
+    position: absolute;
+    width: 25px;
+    height: 14px;
+    font-size: 8pt;
+    top: 70px;
+    left: 0px;
+}
+
+.curingtime-right {
+    position: absolute;
+    width: 25px;
+    height: 14px;
+    font-size: 8pt;
+    text-align: right;
+    top: 70px;
+    left: 27px;
+}
+
+.machine-autolampleft {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border: 1px solid black;
+    background-color: lawngreen;
+    top: 62px;
+    left: 0px;
+}
+
+.machine-autolampright {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border: 1px solid black;
+    background-color: lawngreen;
+    top: 62px;
+    left: 45px;
+}
+
+.tire-panleft {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 5px solid black;
+    top: 12px;
+    left: 0px;
+}
+
+.tire-panright {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 5px solid black;
+    top: 12px;
+    left: 36px;
+}
+
+.tire-loaderleft {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 5px solid black;
+    top: 27px;
+    left: 10px;
+}
+
+.tire-loaderright {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 5px solid black;
+    top: 27px;
+    left: 26px;
+}
+
+.tire-cavityleft {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 5px solid black;
+    top: 48px;
+    left: 5px;
+}
+
+.tire-cavityright {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 5px solid black;
+    top: 48px;
+    left: 31px;
+}
+
+.cavity-labelleft {
+    position: absolute;
+    width: 53px;
+    height: 8px;
+    font-size: 8px;
+    top: 85px;
+    left: 0px;
+}
+
+.cavity-labelright {
+    position: absolute;
+    width: 53px;
+    height: 8px;
+    font-size: 8px;
+    top: 85px;
+    left: 46px;
+}
+
+.press-label {
+    position: absolute;
+    width: 30px;
+    height: 14px;
+    font-size: 12px;
+    top: 90px;
+    left: 15px;
+}

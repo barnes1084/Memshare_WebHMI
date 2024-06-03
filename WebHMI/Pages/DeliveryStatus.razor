@@ -1,0 +1,178 @@
+﻿@page "/deliverystatus"
+@using WebHMI.Data;
+@inject MemoryMapService MemoryMapService
+
+<PageTitle>Delivery Status</PageTitle>
+
+<h3>Delivery Status</h3>
+
+<div class="press" style="top: 150px; left: 300px;">
+    @if (c01L_TireBeingDelivered)
+    {
+        <div class="deliverytime-left">@c01L_DeliveryTime</div>
+    }
+    @if (c01R_TireBeingDelivered)
+    {
+        <div class="deliverytime-right">@c01R_DeliveryTime</div>
+    }
+    @if (c01L_TireOnHold)
+    {
+        <div class="hold-left">HOLD</div>
+    }
+    @if (c01R_TireOnHold)
+    {
+        <div class="hold-right">HOLD</div>
+    }
+    @if (c01L_PanAlarm)
+    {
+        <div class="pan-alarmleft"></div>
+    }
+    @if (c01R_PanAlarm)
+    {
+        <div class="pan-alarmright"></div>
+    }
+    @if (c01L_CavityAlarm)
+    {
+        <div class="press-alarmleft"></div>
+    }
+    @if (c01R_CavityAlarm)
+    {
+        <div class="press-alarmright"></div>
+    }
+
+    <div class="machine-left"></div>
+    <div class="machine-right"></div>
+    <div class="machine-topleft"></div>
+    <div class="machine-topright"></div>
+    <div class="machine-panleft"></div>
+    <div class="machine-panright"></div>
+    <div class="machine-loaderleft"></div>
+    <div class="machine-loaderright"></div>
+    <div class="machine-cavityleft"></div>
+    <div class="machine-cavityright"></div>
+    <div class="curingtime-left">@c01L_CureTime</div>
+    <div class="curingtime-right">@c01R_CureTime</div>
+    @if (c01L_TireInPan)
+    {
+        <div class="tire-panleft"></div>
+    }
+    @if (c01R_TireInPan)
+    {
+        <div class="tire-panright"></div>
+    }
+    @if (c01L_TireInLoader)
+    {
+        <div class="tire-loaderleft"></div>
+    }
+    @if (c01R_TireInLoader)
+    {
+        <div class="tire-loaderright"></div>
+    }
+    @if (c01L_TireInCavity)
+    {
+        <div class="tire-cavityleft"></div>
+    }
+    @if (c01R_TireInCavity)
+    {
+        <div class="tire-cavityright"></div>
+    }
+    @if (c01L_InAutoDelivery)
+    {
+        <div class="machine-autolampleft"></div>
+    }
+    else
+    {
+        <div class="machine-autolampleft" style="background-color:red"></div>
+    }
+    @if (c01R_InAutoDelivery)
+    {
+        <div class="machine-autolampright"></div>
+    }
+    else
+    {
+        <div class="machine-autolampright" style="background-color:red"></div>
+    }
+    <div class="cavity-labelleft">L</div>
+    <div class="cavity-labelright">R</div>
+    <div class="press-label">C01</div>
+
+</div>
+
+@code {
+    private System.Timers.Timer? timer;
+
+    private string? c01L_DeliveryTime;
+    private string? c01L_CureTime;
+    private bool c01L_TireBeingDelivered;
+    private bool c01L_TireOnHold;
+    private bool c01L_TireInPan;
+    private bool c01L_TireInLoader;
+    private bool c01L_TireInCavity;
+    private bool c01L_InAutoDelivery;
+    private bool c01L_CavityAlarm;
+    private bool c01L_PanAlarm;
+
+    private string? c01R_DeliveryTime;
+    private string? c01R_CureTime;
+    private bool c01R_TireBeingDelivered;
+    private bool c01R_TireOnHold;
+    private bool c01R_TireInPan;
+    private bool c01R_TireInLoader;
+    private bool c01R_TireInCavity;
+    private bool c01R_InAutoDelivery;
+    private bool c01R_CavityAlarm;
+    private bool c01R_PanAlarm;
+
+
+    protected override void OnInitialized()
+    {
+        timer = new System.Timers.Timer(1000);
+        timer.Elapsed += async (sender, args) => await InvokeAsync(UpdateStateAndAnimations);
+        timer.Start();
+    }
+
+    private void UpdateStateAndAnimations()
+    {
+        // Get PLC tag values
+        // C01L
+        c01L_DeliveryTime = GetFormattedTime(MemoryMapService.GetTagValue<int>("TrenchA", "C01L_DeliveryTime") / 1000);
+        c01L_CureTime = GetFormattedTime(MemoryMapService.GetTagValue<int>("TrenchA", "PR_to_PI_C01L.TotalCureSeconds"));
+        c01L_TireBeingDelivered = MemoryMapService.GetTagValue<bool>("TrenchA", "PI_to_PR_C01L.TireBeingDelivered");
+        c01L_TireOnHold = MemoryMapService.GetTagValue<bool>("TrenchA", "C01L_TireOnHold");
+        c01L_TireInPan = MemoryMapService.GetTagValue<bool>("TrenchA", "PR_to_PI_C01L.TireInPan");
+        c01L_TireInLoader = MemoryMapService.GetTagValue<bool>("TrenchA", "PR_to_PI_C01L.TireInLoader");
+        c01L_TireInCavity = MemoryMapService.GetTagValue<bool>("TrenchA", "PR_to_PI_C01L.TireInCavity");
+        c01L_InAutoDelivery = MemoryMapService.GetTagValue<bool>("TrenchA", "Cavity_C01L.AcceptingDeliveries");
+        c01L_CavityAlarm = MemoryMapService.GetTagValue<bool>("TrenchA", "PR_to_PI_C01L.AlarmAutoCycleStopped");
+        c01L_PanAlarm = !MemoryMapService.GetTagValue<bool>("TrenchA", "PI_to_PR_C01L.PanReadyForDelivery");
+
+        // C01R
+        c01R_DeliveryTime = GetFormattedTime(MemoryMapService.GetTagValue<int>("TrenchA", "C01R_DeliveryTime") / 1000);
+        c01R_CureTime = GetFormattedTime(MemoryMapService.GetTagValue<int>("TrenchA", "PR_to_PI_C01R.TotalCureSeconds"));
+        c01R_TireBeingDelivered = MemoryMapService.GetTagValue<bool>("TrenchA", "PI_to_PR_C01R.TireBeingDelivered");
+        c01R_TireOnHold = MemoryMapService.GetTagValue<bool>("TrenchA", "C01R_TireOnHold");
+        c01R_TireInPan = MemoryMapService.GetTagValue<bool>("TrenchA", "PR_to_PI_C01R.TireInPan");
+        c01R_TireInLoader = MemoryMapService.GetTagValue<bool>("TrenchA", "PR_to_PI_C01R.TireInLoader");
+        c01R_TireInCavity = MemoryMapService.GetTagValue<bool>("TrenchA", "PR_to_PI_C01R.TireInCavity");
+        c01R_InAutoDelivery = MemoryMapService.GetTagValue<bool>("TrenchA", "Cavity_C01R.AcceptingDeliveries");
+        c01R_CavityAlarm = MemoryMapService.GetTagValue<bool>("TrenchA", "PR_to_PI_C01R.AlarmAutoCycleStopped");
+        c01R_PanAlarm = !MemoryMapService.GetTagValue<bool>("TrenchA", "PI_to_PR_C01R.PanReadyForDelivery");
+
+
+        StateHasChanged();
+    }
+
+    private string GetFormattedTime(int value)
+    {
+        int minutes = value / 60;
+        int seconds = value % 60;
+        return $"{minutes:0}:{seconds:00}";
+    }
+
+    public void Dispose()
+    {
+        timer?.Dispose();
+    }
+}
+
+
