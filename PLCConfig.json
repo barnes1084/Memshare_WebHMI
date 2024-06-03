@@ -1,0 +1,990 @@
+[
+  {
+    "Name": "QC811",
+    "IPAddress": "172.18.173.52",
+    "Tags": [
+      {
+        "Name": "P1_PRESENCE_INPUT",
+        "Type": "bool"
+      },
+      {
+        "Name": "P1_Start.EN",
+        "Type": "bool"
+      }
+    ]
+  },
+  {
+    "Name": "TrenchA",
+    "IPAddress": "172.18.173.83",
+    "Tags": [
+      {
+        "Name": "C01L_DeliveryTime",
+        "Type": "dint"
+      },
+      {
+        "Name": "PR_to_PI_C01L.TotalCureSeconds",
+        "Type": "dint"
+      },
+      {
+        "Name": "PI_to_PR_C01L.TireBeingDelivered",
+        "Type": "bool"
+      },
+      {
+        "Name": "C01L_TireOnHold",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C01L.TireInPan",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C01L.TireInLoader",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C01L.TireInCavity",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C01L.AcceptingDeliveries",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C01L.AlarmAutoCycleStopped",
+        "Type": "bool"
+      },
+      {
+        "Name": "PI_to_PR_C01L.PanReadyForDelivery",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C01L.GTC",
+        "Type": "String"
+      },
+      {
+        "Name": "C01R_DeliveryTime",
+        "Type": "dint"
+      },
+      {
+        "Name": "PR_to_PI_C01R.TotalCureSeconds",
+        "Type": "dint"
+      },
+      {
+        "Name": "PI_to_PR_C01R.TireBeingDelivered",
+        "Type": "bool"
+      },
+      {
+        "Name": "C01R_TireOnHold",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C01R.TireInPan",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C01R.TireInLoader",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C01R.TireInCavity",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C01R.AcceptingDeliveries",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C01R.AlarmAutoCycleStopped",
+        "Type": "bool"
+      },
+      {
+        "Name": "PI_to_PR_C01R.PanReadyForDelivery",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C01R.GTC",
+        "Type": "String"
+      },
+      {
+        "Name": "C02L_DeliveryTime",
+        "Type": "dint"
+      },
+      {
+        "Name": "PR_to_PI_C02L.TotalCureSeconds",
+        "Type": "dint"
+      },
+      {
+        "Name": "PI_to_PR_C02L.TireBeingDelivered",
+        "Type": "bool"
+      },
+      {
+        "Name": "C02L_TireOnHold",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C02L.TireInPan",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C02L.TireInLoader",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C02L.TireInCavity",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C02L.AcceptingDeliveries",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C02L.AlarmAutoCycleStopped",
+        "Type": "bool"
+      },
+      {
+        "Name": "PI_to_PR_C02L.PanReadyForDelivery",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C02L.GTC",
+        "Type": "String"
+      },
+      {
+        "Name": "C02R_DeliveryTime",
+        "Type": "dint"
+      },
+      {
+        "Name": "PR_to_PI_C02R.TotalCureSeconds",
+        "Type": "dint"
+      },
+      {
+        "Name": "PI_to_PR_C02R.TireBeingDelivered",
+        "Type": "bool"
+      },
+      {
+        "Name": "C02R_TireOnHold",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C02R.TireInPan",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C02R.TireInLoader",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C02R.TireInCavity",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C02R.AcceptingDeliveries",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C02R.AlarmAutoCycleStopped",
+        "Type": "bool"
+      },
+      {
+        "Name": "PI_to_PR_C02R.PanReadyForDelivery",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C02R.GTC",
+        "Type": "String"
+      },
+      {
+        "Name": "C03L_DeliveryTime",
+        "Type": "dint"
+      },
+      {
+        "Name": "PR_to_PI_C03L.TotalCureSeconds",
+        "Type": "dint"
+      },
+      {
+        "Name": "PI_to_PR_C03L.TireBeingDelivered",
+        "Type": "bool"
+      },
+      {
+        "Name": "C03L_TireOnHold",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C03L.TireInPan",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C03L.TireInLoader",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C03L.TireInCavity",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C03L.AcceptingDeliveries",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C03L.AlarmAutoCycleStopped",
+        "Type": "bool"
+      },
+      {
+        "Name": "PI_to_PR_C03L.PanReadyForDelivery",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C03L.GTC",
+        "Type": "String"
+      },
+      {
+        "Name": "C03R_DeliveryTime",
+        "Type": "dint"
+      },
+      {
+        "Name": "PR_to_PI_C03R.TotalCureSeconds",
+        "Type": "dint"
+      },
+      {
+        "Name": "PI_to_PR_C03R.TireBeingDelivered",
+        "Type": "bool"
+      },
+      {
+        "Name": "C03R_TireOnHold",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C03R.TireInPan",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C03R.TireInLoader",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C03R.TireInCavity",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C03R.AcceptingDeliveries",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C03R.AlarmAutoCycleStopped",
+        "Type": "bool"
+      },
+      {
+        "Name": "PI_to_PR_C03R.PanReadyForDelivery",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C03R.GTC",
+        "Type": "String"
+      },
+      {
+        "Name": "C04L_DeliveryTime",
+        "Type": "dint"
+      },
+      {
+        "Name": "PR_to_PI_C04L.TotalCureSeconds",
+        "Type": "dint"
+      },
+      {
+        "Name": "PI_to_PR_C04L.TireBeingDelivered",
+        "Type": "bool"
+      },
+      {
+        "Name": "C04L_TireOnHold",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C04L.TireInPan",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C04L.TireInLoader",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C04L.TireInCavity",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C04L.AcceptingDeliveries",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C04L.AlarmAutoCycleStopped",
+        "Type": "bool"
+      },
+      {
+        "Name": "PI_to_PR_C04L.PanReadyForDelivery",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C04L.GTC",
+        "Type": "String"
+      },
+      {
+        "Name": "C04R_DeliveryTime",
+        "Type": "dint"
+      },
+      {
+        "Name": "PR_to_PI_C04R.TotalCureSeconds",
+        "Type": "dint"
+      },
+      {
+        "Name": "PI_to_PR_C04R.TireBeingDelivered",
+        "Type": "bool"
+      },
+      {
+        "Name": "C04R_TireOnHold",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C04R.TireInPan",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C04R.TireInLoader",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C04R.TireInCavity",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C04R.AcceptingDeliveries",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C04R.AlarmAutoCycleStopped",
+        "Type": "bool"
+      },
+      {
+        "Name": "PI_to_PR_C04R.PanReadyForDelivery",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C04R.GTC",
+        "Type": "String"
+      },
+      {
+        "Name": "C05L_DeliveryTime",
+        "Type": "dint"
+      },
+      {
+        "Name": "PR_to_PI_C05L.TotalCureSeconds",
+        "Type": "dint"
+      },
+      {
+        "Name": "PI_to_PR_C05L.TireBeingDelivered",
+        "Type": "bool"
+      },
+      {
+        "Name": "C05L_TireOnHold",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C05L.TireInPan",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C05L.TireInLoader",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C05L.TireInCavity",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C05L.AcceptingDeliveries",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C05L.AlarmAutoCycleStopped",
+        "Type": "bool"
+      },
+      {
+        "Name": "PI_to_PR_C05L.PanReadyForDelivery",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C05L.GTC",
+        "Type": "String"
+      },
+      {
+        "Name": "C05R_DeliveryTime",
+        "Type": "dint"
+      },
+      {
+        "Name": "PR_to_PI_C05R.TotalCureSeconds",
+        "Type": "dint"
+      },
+      {
+        "Name": "PI_to_PR_C05R.TireBeingDelivered",
+        "Type": "bool"
+      },
+      {
+        "Name": "C05R_TireOnHold",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C05R.TireInPan",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C05R.TireInLoader",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C05R.TireInCavity",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C05R.AcceptingDeliveries",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C05R.AlarmAutoCycleStopped",
+        "Type": "bool"
+      },
+      {
+        "Name": "PI_to_PR_C05R.PanReadyForDelivery",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C05R.GTC",
+        "Type": "String"
+      },
+      {
+        "Name": "C06L_DeliveryTime",
+        "Type": "dint"
+      },
+      {
+        "Name": "PR_to_PI_C06L.TotalCureSeconds",
+        "Type": "dint"
+      },
+      {
+        "Name": "PI_to_PR_C06L.TireBeingDelivered",
+        "Type": "bool"
+      },
+      {
+        "Name": "C06L_TireOnHold",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C06L.TireInPan",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C06L.TireInLoader",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C06L.TireInCavity",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C06L.AcceptingDeliveries",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C06L.AlarmAutoCycleStopped",
+        "Type": "bool"
+      },
+      {
+        "Name": "PI_to_PR_C06L.PanReadyForDelivery",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C06L.GTC",
+        "Type": "String"
+      },
+      {
+        "Name": "C06R_DeliveryTime",
+        "Type": "dint"
+      },
+      {
+        "Name": "PR_to_PI_C06R.TotalCureSeconds",
+        "Type": "dint"
+      },
+      {
+        "Name": "PI_to_PR_C06R.TireBeingDelivered",
+        "Type": "bool"
+      },
+      {
+        "Name": "C06R_TireOnHold",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C06R.TireInPan",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C06R.TireInLoader",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C06R.TireInCavity",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C06R.AcceptingDeliveries",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C06R.AlarmAutoCycleStopped",
+        "Type": "bool"
+      },
+      {
+        "Name": "PI_to_PR_C06R.PanReadyForDelivery",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C06R.GTC",
+        "Type": "String"
+      },
+      {
+        "Name": "C07L_DeliveryTime",
+        "Type": "dint"
+      },
+      {
+        "Name": "PR_to_PI_C07L.TotalCureSeconds",
+        "Type": "dint"
+      },
+      {
+        "Name": "PI_to_PR_C07L.TireBeingDelivered",
+        "Type": "bool"
+      },
+      {
+        "Name": "C07L_TireOnHold",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C07L.TireInPan",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C07L.TireInLoader",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C07L.TireInCavity",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C07L.AcceptingDeliveries",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C07L.AlarmAutoCycleStopped",
+        "Type": "bool"
+      },
+      {
+        "Name": "PI_to_PR_C07L.PanReadyForDelivery",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C07L.GTC",
+        "Type": "String"
+      },
+      {
+        "Name": "C07R_DeliveryTime",
+        "Type": "dint"
+      },
+      {
+        "Name": "PR_to_PI_C07R.TotalCureSeconds",
+        "Type": "dint"
+      },
+      {
+        "Name": "PI_to_PR_C07R.TireBeingDelivered",
+        "Type": "bool"
+      },
+      {
+        "Name": "C07R_TireOnHold",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C07R.TireInPan",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C07R.TireInLoader",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C07R.TireInCavity",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C07R.AcceptingDeliveries",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C07R.AlarmAutoCycleStopped",
+        "Type": "bool"
+      },
+      {
+        "Name": "PI_to_PR_C07R.PanReadyForDelivery",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C07R.GTC",
+        "Type": "String"
+      },
+      {
+        "Name": "C07L_DeliveryTime",
+        "Type": "dint"
+      },
+      {
+        "Name": "PR_to_PI_C07L.TotalCureSeconds",
+        "Type": "dint"
+      },
+      {
+        "Name": "PI_to_PR_C07L.TireBeingDelivered",
+        "Type": "bool"
+      },
+      {
+        "Name": "C07L_TireOnHold",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C07L.TireInPan",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C07L.TireInLoader",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C07L.TireInCavity",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C07L.AcceptingDeliveries",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C07L.AlarmAutoCycleStopped",
+        "Type": "bool"
+      },
+      {
+        "Name": "PI_to_PR_C07L.PanReadyForDelivery",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C07L.GTC",
+        "Type": "String"
+      },
+      {
+        "Name": "C07R_DeliveryTime",
+        "Type": "dint"
+      },
+      {
+        "Name": "PR_to_PI_C07R.TotalCureSeconds",
+        "Type": "dint"
+      },
+      {
+        "Name": "PI_to_PR_C07R.TireBeingDelivered",
+        "Type": "bool"
+      },
+      {
+        "Name": "C07R_TireOnHold",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C07R.TireInPan",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C07R.TireInLoader",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C07R.TireInCavity",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C07R.AcceptingDeliveries",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C07R.AlarmAutoCycleStopped",
+        "Type": "bool"
+      },
+      {
+        "Name": "PI_to_PR_C07R.PanReadyForDelivery",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C07R.GTC",
+        "Type": "String"
+      },
+      {
+        "Name": "C08L_DeliveryTime",
+        "Type": "dint"
+      },
+      {
+        "Name": "PR_to_PI_C08L.TotalCureSeconds",
+        "Type": "dint"
+      },
+      {
+        "Name": "PI_to_PR_C08L.TireBeingDelivered",
+        "Type": "bool"
+      },
+      {
+        "Name": "C08L_TireOnHold",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C08L.TireInPan",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C08L.TireInLoader",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C08L.TireInCavity",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C08L.AcceptingDeliveries",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C08L.AlarmAutoCycleStopped",
+        "Type": "bool"
+      },
+      {
+        "Name": "PI_to_PR_C08L.PanReadyForDelivery",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C08L.GTC",
+        "Type": "String"
+      },
+      {
+        "Name": "C08R_DeliveryTime",
+        "Type": "dint"
+      },
+      {
+        "Name": "PR_to_PI_C08R.TotalCureSeconds",
+        "Type": "dint"
+      },
+      {
+        "Name": "PI_to_PR_C08R.TireBeingDelivered",
+        "Type": "bool"
+      },
+      {
+        "Name": "C08R_TireOnHold",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C08R.TireInPan",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C08R.TireInLoader",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C08R.TireInCavity",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C08R.AcceptingDeliveries",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C08R.AlarmAutoCycleStopped",
+        "Type": "bool"
+      },
+      {
+        "Name": "PI_to_PR_C08R.PanReadyForDelivery",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C08R.GTC",
+        "Type": "String"
+      },
+      {
+        "Name": "C09L_DeliveryTime",
+        "Type": "dint"
+      },
+      {
+        "Name": "PR_to_PI_C09L.TotalCureSeconds",
+        "Type": "dint"
+      },
+      {
+        "Name": "PI_to_PR_C09L.TireBeingDelivered",
+        "Type": "bool"
+      },
+      {
+        "Name": "C09L_TireOnHold",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C09L.TireInPan",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C09L.TireInLoader",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C09L.TireInCavity",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C09L.AcceptingDeliveries",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C09L.AlarmAutoCycleStopped",
+        "Type": "bool"
+      },
+      {
+        "Name": "PI_to_PR_C09L.PanReadyForDelivery",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C09L.GTC",
+        "Type": "String"
+      },
+      {
+        "Name": "C09R_DeliveryTime",
+        "Type": "dint"
+      },
+      {
+        "Name": "PR_to_PI_C09R.TotalCureSeconds",
+        "Type": "dint"
+      },
+      {
+        "Name": "PI_to_PR_C09R.TireBeingDelivered",
+        "Type": "bool"
+      },
+      {
+        "Name": "C09R_TireOnHold",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C09R.TireInPan",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C09R.TireInLoader",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C09R.TireInCavity",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C09R.AcceptingDeliveries",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C09R.AlarmAutoCycleStopped",
+        "Type": "bool"
+      },
+      {
+        "Name": "PI_to_PR_C09R.PanReadyForDelivery",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C09R.GTC",
+        "Type": "String"
+      },
+      {
+        "Name": "C10L_DeliveryTime",
+        "Type": "dint"
+      },
+      {
+        "Name": "PR_to_PI_C10L.TotalCureSeconds",
+        "Type": "dint"
+      },
+      {
+        "Name": "PI_to_PR_C10L.TireBeingDelivered",
+        "Type": "bool"
+      },
+      {
+        "Name": "C10L_TireOnHold",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C10L.TireInPan",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C10L.TireInLoader",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C10L.TireInCavity",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C10L.AcceptingDeliveries",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C10L.AlarmAutoCycleStopped",
+        "Type": "bool"
+      },
+      {
+        "Name": "PI_to_PR_C10L.PanReadyForDelivery",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C10L.GTC",
+        "Type": "String"
+      },
+      {
+        "Name": "C10R_DeliveryTime",
+        "Type": "dint"
+      },
+      {
+        "Name": "PR_to_PI_C10R.TotalCureSeconds",
+        "Type": "dint"
+      },
+      {
+        "Name": "PI_to_PR_C10R.TireBeingDelivered",
+        "Type": "bool"
+      },
+      {
+        "Name": "C10R_TireOnHold",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C10R.TireInPan",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C10R.TireInLoader",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C10R.TireInCavity",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C10R.AcceptingDeliveries",
+        "Type": "bool"
+      },
+      {
+        "Name": "PR_to_PI_C10R.AlarmAutoCycleStopped",
+        "Type": "bool"
+      },
+      {
+        "Name": "PI_to_PR_C10R.PanReadyForDelivery",
+        "Type": "bool"
+      },
+      {
+        "Name": "Cavity_C10R.GTC",
+        "Type": "String"
+      }
+    ]
+  }
+]
